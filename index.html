@@ -37,7 +37,7 @@
             position: absolute;
             width: 2px;
             height: 2px;
-            background: linear-gradient(45deg, #8b5cf6, #06b6d4, #10b981);
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4, #10b981); color: #8b5cf6;
             border-radius: 50%;
             opacity: 0.6;
             animation: float 6s ease-in-out infinite;
@@ -91,8 +91,8 @@
         .logo-accent {
             font-size: 1.5rem;
             font-weight: 700;
-            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
-            -webkit-background-clip: text;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4); color: #8b5cf6; color: #8b5cf6;
+            background-clip: text; -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
@@ -115,7 +115,7 @@
         }
 
         .cta-button {
-            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4); color: #8b5cf6; color: #8b5cf6;
             color: white;
             border: none;
             padding: 0.75rem 1.5rem;
@@ -159,15 +159,15 @@
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, #ffffff, #8b5cf6);
-            -webkit-background-clip: text;
+            background: linear-gradient(45deg, #ffffff, #8b5cf6); color: #ffffff; color: #ffffff;
+            background-clip: text; -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .gradient-text {
-            background: linear-gradient(45deg, #8b5cf6, #06b6d4, #10b981);
-            -webkit-background-clip: text;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4, #10b981); color: #8b5cf6;
+            background-clip: text; -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
@@ -200,7 +200,7 @@
         }
 
         .primary-button {
-            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4); color: #8b5cf6; color: #8b5cf6;
             color: white;
         }
 
@@ -233,8 +233,8 @@
         .stat h3 {
             font-size: 2.5rem;
             font-weight: 800;
-            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
-            -webkit-background-clip: text;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4); color: #8b5cf6; color: #8b5cf6;
+            background-clip: text; -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 0.5rem;
@@ -262,8 +262,8 @@
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ffffff, #8b5cf6);
-            -webkit-background-clip: text;
+            background: linear-gradient(45deg, #ffffff, #8b5cf6); color: #ffffff; color: #ffffff;
+            background-clip: text; -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
@@ -307,7 +307,7 @@
         .feature-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4); color: #8b5cf6; color: #8b5cf6;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -563,7 +563,7 @@
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4); color: #8b5cf6; color: #8b5cf6;
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 20px;
@@ -585,8 +585,8 @@
         .amount {
             font-size: 3rem;
             font-weight: 800;
-            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
-            -webkit-background-clip: text;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4); color: #8b5cf6; color: #8b5cf6;
+            background-clip: text; -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
@@ -626,7 +626,7 @@
         }
 
         .pricing-button.primary {
-            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4); color: #8b5cf6; color: #8b5cf6;
             color: white;
         }
 
@@ -695,7 +695,7 @@
         }
 
         .newsletter-button {
-            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4); color: #8b5cf6; color: #8b5cf6;
             color: white;
             border: none;
             padding: 1rem 1.5rem;
@@ -1440,3 +1440,20 @@
     </script>
 </body>
 </html>
+
+        /* Fallback text colors to ensure visibility */
+        .hero-title, .section-header h2 {
+            color: #ffffff !important;
+        }
+        
+        .gradient-text {
+            color: #8b5cf6 !important;
+        }
+        
+        .stat h3, .amount {
+            color: #8b5cf6 !important;
+        }
+        
+        .logo-accent {
+            color: #8b5cf6 !important;
+        }
