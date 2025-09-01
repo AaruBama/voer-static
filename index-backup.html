@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostinger Horizons - AI-Powered Candidate Communication</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Nano Particles Background */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4, #10b981);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-20px) scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .logo-accent {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #8b5cf6;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #8b5cf6;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin-bottom: 4rem;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .gradient-text {
+            color: #8b5cf6;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #a1a1aa;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .primary-button, .secondary-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .primary-button {
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            color: white;
+        }
+
+        .primary-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid rgba(139, 92, 246, 0.5);
+        }
+
+        .secondary-button:hover {
+            background: rgba(139, 92, 246, 0.1);
+            border-color: #8b5cf6;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #8b5cf6;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat p {
+            color: #a1a1aa;
+            font-weight: 500;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: #a1a1aa;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #8b5cf6;
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .feature-icon .icon {
+            color: white;
+            width: 40px;
+            height: 40px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .feature-card p {
+            color: #a1a1aa;
+            line-height: 1.6;
+        }
+
+        .bottlenecks-section {
+            text-align: center;
+        }
+
+        .bottlenecks-section h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+
+        .bottlenecks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .bottleneck-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 15px;
+            padding: 1rem;
+        }
+
+        .bottleneck-icon {
+            color: #ef4444;
+            min-width: 24px;
+        }
+
+        .bottleneck-item p {
+            color: #a1a1aa;
+            font-weight: 500;
+        }
+
+        /* Demo Section */
+        .demo {
+            padding: 6rem 0;
+            background: rgba(139, 92, 246, 0.05);
+            position: relative;
+            z-index: 2;
+        }
+
+        .demo-video {
+            margin-bottom: 4rem;
+        }
+
+        .video-placeholder {
+            background: linear-gradient(45deg, #1f2937, #374151);
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 20px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder:hover {
+            border-color: #8b5cf6;
+            transform: scale(1.02);
+        }
+
+        .play-icon {
+            color: #8b5cf6;
+            margin-bottom: 1rem;
+        }
+
+        .video-placeholder p {
+            color: #a1a1aa;
+            font-weight: 500;
+        }
+
+        .demo-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .demo-feature {
+            text-align: center;
+        }
+
+        .demo-feature h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .demo-feature p {
+            color: #a1a1aa;
+            line-height: 1.6;
+        }
+
+        /* Companies Section */
+        .companies {
+            padding: 6rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .company-logo {
+            text-align: center;
+        }
+
+        .logo-placeholder {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 15px;
+            padding: 2rem 1rem;
+            font-weight: 600;
+            color: #8b5cf6;
+            transition: all 0.3s ease;
+        }
+
+        .logo-placeholder:hover {
+            border-color: #8b5cf6;
+            transform: translateY(-2px);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 0;
+            background: rgba(139, 92, 246, 0.05);
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: #8b5cf6;
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.1);
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .star {
+            color: #FFD700;
+            font-size: 16px;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #a1a1aa;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-author p {
+            color: #8b5cf6;
+            font-weight: 500;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: #8b5cf6;
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.1);
+        }
+
+        .pricing-card.popular {
+            border-color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .price {
+            margin-bottom: 2rem;
+        }
+
+        .amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #8b5cf6;
+        }
+
+        .period {
+            color: #a1a1aa;
+            font-size: 1rem;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            color: #a1a1aa;
+        }
+
+        .features li .check-icon {
+            color: #10b981;
+            min-width: 16px;
+        }
+
+        .pricing-button {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .pricing-button.primary {
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            color: white;
+        }
+
+        .pricing-button.secondary {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid rgba(139, 92, 246, 0.5);
+        }
+
+        .pricing-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
+            position: relative;
+            z-index: 2;
+        }
+
+        .newsletter-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .newsletter-content p {
+            font-size: 1.1rem;
+            color: #a1a1aa;
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .newsletter-form input::placeholder {
+            color: #a1a1aa;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #8b5cf6;
+        }
+
+        .newsletter-button {
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: #0f0f0f;
+            padding: 4rem 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .footer-section p {
+            color: #a1a1aa;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #a1a1aa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #8b5cf6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: #a1a1aa;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #8b5cf6;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info .icon {
+            color: #8b5cf6;
+            min-width: 16px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #a1a1aa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(20px);
+                padding: 2rem;
+                border-top: 1px solid rgba(139, 92, 246, 0.2);
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 6rem 1rem 2rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 1s ease;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Nano Particles Background -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Hostinger</span>
+                <span class="logo-accent">Horizons</span>
+            </div>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#about">About</a>
+                <a href="#demo">Demo</a>
+                <a href="#contact">Contact</a>
+                <button class="cta-button" onclick="scrollToSection('contact')">Get in Touch</button>
+            </div>
+
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <i data-lucide="menu"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content fade-in">
+            <h1 class="hero-title">
+                AI-Powered Candidate
+                <span class="gradient-text"> Communication</span>
+            </h1>
+            <p class="hero-subtitle">
+                Automate candidate calls, scheduling, and ATS updates with intelligent AI voice agents. 
+                Scale your recruitment process without the manual overhead. Focus on what matters most.
+            </p>
+            <div class="hero-buttons">
+                <button class="primary-button" onclick="scrollToSection('demo')">
+                    <i data-lucide="play"></i>
+                    Watch Demo
+                </button>
+                <button class="secondary-button" onclick="scrollToSection('pricing')">
+                    View Pricing
+                </button>
+            </div>
+        </div>
+
+        <div class="hero-stats fade-in">
+            <div class="stat">
+                <h3>500+</h3>
+                <p>Companies Trust Us</p>
+            </div>
+            <div class="stat">
+                <h3>50,000+</h3>
+                <p>Candidates Called</p>
+            </div>
+            <div class="stat">
+                <h3>70%</h3>
+                <p>Time Saved</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Revolutionizing Recruitment Communication</h2>
+                <p>Say goodbye to manual candidate calls and hello to intelligent automation</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i data-lucide="phone" class="icon"></i>
+                    </div>
+                    <h3>Smart Candidate Calls</h3>
+                    <p>AI calls candidates to collect essential details like name, salary expectations, and notice period automatically.</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i data-lucide="calendar" class="icon"></i>
+                    </div>
+                    <h3>Intelligent Scheduling</h3>
+                    <p>Automatically schedules interviews based on recruiter availability and candidate preferences across timezones.</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i data-lucide="message-circle" class="icon"></i>
+                    </div>
+                    <h3>Result Notifications</h3>
+                    <p>Automatically notifies candidates about interview results after ATS is updated with outcomes.</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i data-lucide="database" class="icon"></i>
+                    </div>
+                    <h3>ATS Integration</h3>
+                    <p>Seamlessly updates your ATS with candidate status, interview schedules, and communication logs.</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i data-lucide="globe" class="icon"></i>
+                    </div>
+                    <h3>Multilingual Support</h3>
+                    <p>Communicate with candidates in their preferred language with our advanced multilingual AI agents.</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i data-lucide="clock" class="icon"></i>
+                    </div>
+                    <h3>Timezone Sync</h3>
+                    <p>Automatic timezone handling ensures perfect scheduling regardless of candidate or recruiter location.</p>
+                </div>
+            </div>
+
+            <div class="bottlenecks-section fade-in">
+                <h3>Recruitment Bottlenecks We Solve</h3>
+                <div class="bottlenecks-grid">
+                    <div class="bottleneck-item">
+                        <i data-lucide="x" class="bottleneck-icon"></i>
+                        <p>Manual candidate calling</p>
+                    </div>
+                    <div class="bottleneck-item">
+                        <i data-lucide="x" class="bottleneck-icon"></i>
+                        <p>Time-consuming scheduling</p>
+                    </div>
+                    <div class="bottleneck-item">
+                        <i data-lucide="x" class="bottleneck-icon"></i>
+                        <p>Manual ATS updates</p>
+                    </div>
+                    <div class="bottleneck-item">
+                        <i data-lucide="x" class="bottleneck-icon"></i>
+                        <p>Result notification delays</p>
+                    </div>
+                    <div class="bottleneck-item">
+                        <i data-lucide="x" class="bottleneck-icon"></i>
+                        <p>Timezone confusion</p>
+                    </div>
+                    <div class="bottleneck-item">
+                        <i data-lucide="x" class="bottleneck-icon"></i>
+                        <p>Language barriers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo" id="demo">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>See AI in Action</h2>
+                <p>Watch how our AI voice agents handle candidate communication seamlessly</p>
+            </div>
+
+            <div class="demo-video scale-in">
+                <div class="video-placeholder">
+                    <i data-lucide="play" class="play-icon"></i>
+                    <p>AI Agent Candidate Communication Demo</p>
+                </div>
+            </div>
+
+            <div class="demo-features">
+                <div class="demo-feature slide-in-left">
+                    <h4>Natural Conversation</h4>
+                    <p>AI agents sound human and collect candidate information naturally</p>
+                </div>
+                <div class="demo-feature slide-in-right">
+                    <h4>Seamless Integration</h4>
+                    <p>Automatic ATS updates and calendar synchronization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Companies Section -->
+    <section class="companies">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Trusted by Leading Companies</h2>
+                <p>Join hundreds of companies that have transformed their recruitment process</p>
+            </div>
+
+            <div class="companies-grid fade-in">
+                <div class="company-logo">
+                    <div class="logo-placeholder">TechCorp</div>
+                </div>
+                <div class="company-logo">
+                    <div class="logo-placeholder">InnovateLab</div>
+                </div>
+                <div class="company-logo">
+                    <div class="logo-placeholder">FutureSoft</div>
+                </div>
+                <div class="company-logo">
+                    <div class="logo-placeholder">DataFlow</div>
+                </div>
+                <div class="company-logo">
+                    <div class="logo-placeholder">CloudScale</div>
+                </div>
+                <div class="company-logo">
+                    <div class="logo-placeholder">NextGen</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>What Our Clients Say</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"Hostinger Horizons has completely transformed our recruitment process. We've reduced manual calling time by 70% and can now handle 10x more candidates without additional headcount."</p>
+                    <div class="testimonial-author">
+                        <h4>Sarah Johnson</h4>
+                        <p>Head of Talent Acquisition at TechCorp</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"The AI agents are incredibly natural. Candidates don't realize they're talking to AI, and our team can focus on strategic hiring decisions instead of administrative tasks."</p>
+                    <div class="testimonial-author">
+                        <h4>Michael Chen</h4>
+                        <p>Technical Recruiter at InnovateLab</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"Finally, a solution that actually works! No more manual ATS updates or missed candidate calls. Our hiring time has reduced by 40%."</p>
+                    <div class="testimonial-author">
+                        <h4>Emily Rodriguez</h4>
+                        <p>HR Director at FutureSoft</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Choose Your Plan</h2>
+                <p>Flexible pricing to scale with your recruitment needs</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in">
+                    <h3>Starter</h3>
+                    <div class="price">
+                        <span class="amount">$99</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features">
+                        <li><i data-lucide="check" class="check-icon"></i>Up to 100 candidate calls/month</li>
+                        <li><i data-lucide="check" class="check-icon"></i>Basic AI voice agent</li>
+                        <li><i data-lucide="check" class="check-icon"></i>Email support</li>
+                        <li><i data-lucide="check" class="check-icon"></i>Calendar integration</li>
+                        <li><i data-lucide="check" class="check-icon"></i>Basic ATS sync</li>
+                    </ul>
+                    <button class="pricing-button secondary" onclick="scrollToSection('contact')">Get Started</button>
+                </div>
+
+                <div class="pricing-card popular fade-in">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Professional</h3>
+                    <div class="price">
+                        <span class="amount">$299</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features">
+                        <li><i data-lucide="check" class="check-icon"></i>Up to 500 candidate calls/month</li>
+                        <li><i data-lucide="check" class="check-icon"></i>Advanced AI voice agent</li>
+                        <li><i data-lucide="check" class="check-icon"></i>Priority support</li>
+                        <li><i data-lucide="check" class="check-icon"></i>Advanced ATS integration</li>
+                        <li><i data-lucide="check" class="check-icon"></i>Multilingual support</li>
+                        <li><i data-lucide="check" class="check-icon"></i>API access</li>
+                    </ul>
+                    <button class="pricing-button primary" onclick="scrollToSection('contact')">Get Started</button>
+                </div>
+
+                <div class="pricing-card fade-in">
+                    <h3>Enterprise</h3>
+                    <div class="price">
+                        <span class="amount">Custom</span>
+                        <span class="period"></span>
+                    </div>
+                    <ul class="features">
+                        <li><i data-lucide="check" class="check-icon"></i>Unlimited candidate calls</li>
+                        <li><i data-lucide="check" class="check-icon"></i>Custom AI training</li>
+                        <li><i data-lucide="check" class="check-icon"></i>Dedicated support</li>
+                        <li><i data-lucide="check" class="check-icon"></i>White-label solution</li>
+                        <li><i data-lucide="check" class="check-icon"></i>Advanced integrations</li>
+                        <li><i data-lucide="check" class="check-icon"></i>Custom features</li>
+                    </ul>
+                    <button class="pricing-button secondary" onclick="scrollToSection('contact')">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content fade-in">
+                <h2>Stay Updated</h2>
+                <p>Get the latest insights on AI recruitment and product updates</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" id="newsletter-email">
+                    <button class="newsletter-button" onclick="subscribeNewsletter()">
+                        Subscribe
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-text">Hostinger</span>
+                        <span class="logo-accent">Horizons</span>
+                    </div>
+                    <p>Transforming recruitment with AI-powered candidate communication</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i data-lucide="linkedin"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i data-lucide="twitter"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i data-lucide="facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#about">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Blog</a></li>
+                        <li><a href="#contact">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="contact-info">
+                        <p><i data-lucide="mail" class="icon"></i>hello@hostingerhorizons.com</p>
+                        <p><i data-lucide="phone" class="icon"></i>+1 (555) 123-4567</p>
+                        <p><i data-lucide="map-pin" class="icon"></i>San Francisco, CA</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hostinger Horizons. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Create nano particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 3 + 's';
+                particle.style.animationDuration = (3 + Math.random() * 4) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Newsletter subscription
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email').value;
+            if (email) {
+                alert('Thank you for subscribing! We\'ll keep you updated with the latest insights.');
+                document.getElementById('newsletter-email').value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        // Intersection Observer for animations
+        function setupAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all animated elements
+            const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+            animatedElements.forEach(el => observer.observe(el));
+        }
+
+        // Parallax effect for particles
+        function handleParallax() {
+            const particles = document.querySelectorAll('.particle');
+            particles.forEach((particle, index) => {
+                const speed = 0.5 + (index % 3) * 0.2;
+                const yPos = (window.scrollY * speed) % window.innerHeight;
+                particle.style.transform = `translateY(${yPos}px)`;
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            setupAnimations();
+            
+            // Add scroll event listener for parallax
+            window.addEventListener('scroll', handleParallax);
+            
+            // Add click event listeners for smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    scrollToSection(targetId);
+                });
+            });
+        });
+
+        // Add some interactive features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to feature cards
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Add click effect to buttons
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
