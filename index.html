@@ -329,7 +329,7 @@
 
         .bottlenecks-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
         }
 
@@ -849,6 +849,54 @@
         }
 
         /* Smooth scrolling */
+        /* Star-like dots background */
+        .stars-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star-dot {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: twinkle 4s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        /* Stat icon styling */
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .stat-icon i {
+            color: white;
+            width: 30px;
+            height: 30px;
+        }
         html {
             scroll-behavior: smooth;
         }
@@ -901,6 +949,8 @@
 </head>
 <body>
     <!-- Nano Particles Background -->
+    <!-- Star-like dots background -->
+    <div class="stars-background" id="stars"></div>
     <div class="particles-container" id="particles"></div>
 
     <!-- Navigation -->
@@ -947,15 +997,15 @@
         </div>
 
         <div class="hero-stats fade-in">
-            <div class="stat">
+            <div class="stat"><div class="stat-icon"><i data-lucide="phone"></i></div>
                 <h3>500+</h3>
                 <p>Companies Trust Us</p>
             </div>
-            <div class="stat">
+            <div class="stat"><div class="stat-icon"><i data-lucide="phone"></i></div>
                 <h3>50,000+</h3>
                 <p>Candidates Called</p>
             </div>
-            <div class="stat">
+            <div class="stat"><div class="stat-icon"><i data-lucide="phone"></i></div>
                 <h3>70%</h3>
                 <p>Time Saved</p>
             </div>
@@ -1305,6 +1355,18 @@
 
         // Create nano particles
         function createParticles() {
+            // Create star dots
+            const starsContainer = document.getElementById("stars");
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement("div");
+                star.className = "star-dot";
+                star.style.left = Math.random() * 100 + "%";
+                star.style.top = Math.random() * 100 + "%";
+                star.style.animationDelay = Math.random() * 4 + "s";
+                starsContainer.appendChild(star);
+            }
+            
+            // Create nano particles
             const particlesContainer = document.getElementById('particles');
             for (let i = 0; i < 50; i++) {
                 const particle = document.createElement('div');
