@@ -243,7 +243,10 @@
         }
 
         .hero-video-placeholder {
-            background: var(--bg-card);
+            background: url('assets/Images/Thumbnail.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             border: 2px solid var(--border-color);
             border-radius: 12px;
             height: 300px;
@@ -267,20 +270,50 @@
         .video-overlay {
             text-align: center;
             padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
         }
 
         .hero-play-icon {
             width: 80px;
             height: 80px;
-            color: var(--text-accent);
-            margin-bottom: 1.5rem;
+            color: white;
+            margin-bottom: 0;
             transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
         }
 
         .hero-video-placeholder:hover .hero-play-icon {
             transform: scale(1.1);
             color: #06b6d4;
         }
+
+        /* Video player styles when it replaces the placeholder */
+        #heroVideo {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+
+
+        /* Ensure poster/thumbnail displays properly */
+        #heroVideo[poster] {
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Fallback background image if poster doesn't work */
+        #heroVideo {
+            background-image: url('assets/Images/Thumbnail.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+
 
         .video-overlay h3 {
             font-size: 1.5rem;
@@ -684,6 +717,8 @@
             line-height: 1.5;
             transition: color 0.3s ease;
         }
+
+
 
         .demo-card {
             background: var(--bg-card);
@@ -1804,6 +1839,8 @@
             }
         }
 
+
+
         @keyframes twinkle {
             0%, 100% {
                 opacity: 0.3;
@@ -1897,8 +1934,8 @@
             </div>
 
             <div class="nav-links" id="nav-links">
-                <a href="#about">About</a>
-                <a href="#demo">Demo</a>
+                <!-- <a href="#about">About</a>
+                <a href="#demo">Demo</a> -->
                 <a href="#" onclick="openContactModal()">Contact</a>
                 <button class="theme-toggle" onclick="toggleTheme()" title="Switch to dark theme">
                     <i data-lucide="sun"></i>
@@ -1941,8 +1978,6 @@
                     <div class="hero-video-placeholder" onclick="playHeroVideo()">
                         <div class="video-overlay">
                             <i data-lucide="play-circle" class="hero-play-icon"></i>
-                            <h3>AI Agent Demo</h3>
-                            <p>See how our AI handles candidate calls naturally</p>
                         </div>
                     </div>
                     <div class="video-features">
@@ -2058,7 +2093,7 @@
     <section class="demo" id="demo">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>See AI in Action</h2>
+                <h2>See our Agents in Action</h2>
                 <p>Watch how our AI voice agents handle candidate communication seamlessly</p>
             </div>
 
@@ -2068,12 +2103,12 @@
                         <div class="demo-video-overlay">
                             <i data-lucide="play-circle" class="demo-play-icon"></i>
                             <h4>Smart Candidate Calls</h4>
-                            <p>Watch AI agents collect candidate information naturally</p>
+                            <p>Watch AI agent schedule interview naturally in English and Hindi. </p>
                         </div>
                     </div>
                     <div class="demo-video-info">
-                        <h5>Natural Conversation Flow</h5>
-                        <p>See how our AI maintains human-like conversations while gathering essential details</p>
+                        <h5>Smart Decision Making & Conflict Resolution</h5>
+                        <p>See how our AI maintains human-like conversations while clearing candidate doubts and scheduling interview.</p>
                     </div>
                 </div>
                 
@@ -2082,12 +2117,12 @@
                         <div class="demo-video-overlay">
                             <i data-lucide="play-circle" class="demo-play-icon"></i>
                             <h4>Intelligent Scheduling</h4>
-                            <p>Watch automated interview scheduling in action</p>
+                            <p>Candidate is busy and requested for another time.</p>
                         </div>
                     </div>
                     <div class="demo-video-info">
-                        <h5>Seamless Calendar Integration</h5>
-                        <p>See how AI automatically syncs with calendars and ATS systems</p>
+                        <h5>Multilingual Support</h5>
+                        <p> Our AI agent handles it gracefully and schedules interview for another time.</p>
                     </div>
                 </div>
                 
@@ -2318,19 +2353,19 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4>Company</h4>
+                    <!-- <h4>Company</h4>
                     <ul>
                         <li><a href="#about">About</a></li>
                         <li><a href="#contact">Blog</a></li>
                         <li><a href="#contact">Careers</a></li>
                         <li><a href="#contact">Contact</a></li>
-                    </ul>
+                    </ul> -->
                 </div>
 
                 <div class="footer-section">
                     <h4>Contact</h4>
                     <div class="contact-info">
-                        <p><i data-lucide="mail" class="icon"></i>hello@callcruit.ai</p>
+                        <p><i data-lucide="mail" class="icon"></i>hello@vaiu.ai</p>
                         <p><i data-lucide="phone" class="icon"></i>+91 (989) 958-5453</p>
                         <p><i data-lucide="map-pin" class="icon"></i>Bengaluru, IN</p>
                     </div>
@@ -2338,7 +2373,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 Hostinger Horizons. All rights reserved.</p>
+                <p>&copy; 2025 Vaiu AI. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -2416,6 +2451,8 @@
         </div>
     </div>
 
+
+
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
@@ -2481,33 +2518,190 @@
 
         // Hero video interaction
         function playHeroVideo() {
-            // You can replace this with actual video functionality
-            alert('Video player would open here. This could be a modal with an embedded video or redirect to a video page.');
-            // Alternative: scroll to demo section
-            // scrollToSection('demo');
+            const placeholder = document.querySelector('.hero-video-placeholder');
+            const videoContainer = document.querySelector('.hero-video-container');
+            
+            // Create video element
+            const video = document.createElement('video');
+            video.id = 'heroVideo';
+            video.controls = true; // Enable default controls
+            video.autoplay = true;
+            video.style.width = '100%';
+            video.style.height = '300px';
+            video.style.borderRadius = '12px';
+            video.style.objectFit = 'cover';
+            video.style.transition = 'all 0.3s ease';
+            video.style.position = 'relative';
+            
+            // Remove unwanted controls
+            video.controlsList = 'nodownload nofullscreen noremoteplayback';
+            video.disablePictureInPicture = true;
+            
+            // Create video source
+            const source = document.createElement('source');
+            source.src = 'assets/videos/recording1.mp4';
+            source.type = 'video/mp4';
+            
+            // Add thumbnail from first frame instead of text
+            video.poster = 'assets/Images/Thumbnail.png';
+            console.log('Setting poster to:', 'assets/Images/Thumbnail.png');
+            
+            // Alternative: Set poster after video loads
+            video.addEventListener('loadedmetadata', function() {
+                console.log('Video metadata loaded, poster should be visible');
+                // Force poster display
+                video.currentTime = 0;
+            });
+            
+
+            
+            // Append source to video
+            video.appendChild(source);
+            
+
+
+            
+
+            
+
+            
+            // Add click event to video as backup for play/pause
+            video.onclick = function() {
+                if (video.paused) {
+                    video.play();
+                    playButton.innerHTML = '⏸';
+                } else {
+                    video.pause();
+                    playButton.innerHTML = '▶';
+                }
+            };
+            
+
+            
+            // Smooth transition: fade out placeholder, fade in video
+            placeholder.style.opacity = '0';
+            placeholder.style.transform = 'scale(0.95)';
+            
+            setTimeout(() => {
+                placeholder.style.display = 'none';
+                
+                // Insert video before the video-features div
+                const videoFeatures = document.querySelector('.video-features');
+                videoContainer.insertBefore(video, videoFeatures);
+                
+                // Set poster again after DOM insertion to ensure it's visible
+                video.poster = 'assets/Images/Thumbnail.png';
+                console.log('Poster set after DOM insertion');
+                
+
+                
+                // Fade in video
+                video.style.opacity = '0';
+                video.style.transform = 'scale(0.95)';
+                
+                setTimeout(() => {
+                    video.style.opacity = '1';
+                    video.style.transform = 'scale(1)';
+                }, 50);
+                
+                // Play the video
+                video.play().catch(function(error) {
+                    console.log("Video autoplay failed:", error);
+                    // Video will still be visible, user can click play button
+                });
+                
+
+            }, 300);
         }
+
+
 
         // Demo video interaction
         function playDemoVideo(videoType) {
-            let videoTitle = '';
+            let audioConfig = {
+                title: 'AI Demo Audio',
+                src: 'assets/Audio/Recording1.mp3'
+            };
+
+            // Configure the audio based on type
             switch(videoType) {
                 case 'candidate-calls':
-                    videoTitle = 'Smart Candidate Calls Demo';
+                    audioConfig = {
+                        title: 'Smart Candidate Calls Demo',
+                        src: 'assets/Audio/Recording1.mp3'
+                    };
                     break;
                 case 'scheduling':
-                    videoTitle = 'Intelligent Scheduling Demo';
+                    audioConfig = {
+                        title: 'Intelligent Scheduling Demo',
+                        src: 'assets/Audio/Recording2.mp3'
+                    };
                     break;
                 case 'notifications':
-                    videoTitle = 'Result Notifications Demo';
+                    audioConfig = {
+                        title: 'Result Notifications Demo',
+                        src: 'assets/Audio/Recording3.mp3'
+                    };
                     break;
-                default:
-                    videoTitle = 'AI Demo Video';
+                // Add more cases if needed
+            }
+
+            // Find the clicked demo card
+            const clickedCard = event.target.closest('.demo-video-card');
+            if (!clickedCard) return;
+            
+            const placeholder = clickedCard.querySelector('.demo-video-placeholder');
+            const playIcon = placeholder.querySelector('.demo-play-icon');
+            
+            // Check if audio is already playing
+            const existingAudio = clickedCard.querySelector('audio');
+            if (existingAudio) {
+                // Audio is playing, pause it
+                existingAudio.pause();
+                existingAudio.remove();
+                playIcon.setAttribute('data-lucide', 'play-circle');
+                // Reinitialize Lucide icons to update the icon
+                lucide.createIcons();
+                return;
             }
             
-            // You can replace this with actual video functionality
-            alert(`${videoTitle} would play here. This could be a modal with an embedded video or redirect to a video page.`);
-            // Alternative: open video modal or redirect
-            // openVideoModal(videoType);
+            // Create hidden audio element
+            const audio = document.createElement('audio');
+            audio.id = `demoAudio-${videoType}`;
+            audio.style.display = 'none';
+            
+            // Create audio source
+            const source = document.createElement('source');
+            source.src = audioConfig.src;
+            source.type = 'audio/mpeg';
+            
+            // Append source to audio
+            audio.appendChild(source);
+            
+            // Insert audio into the card (hidden)
+            clickedCard.appendChild(audio);
+            
+            // Change play icon to pause icon
+            playIcon.setAttribute('data-lucide', 'pause-circle');
+            // Reinitialize Lucide icons to update the icon
+            lucide.createIcons();
+            
+            // Play the audio
+            audio.play().catch(function(error) {
+                console.log("Audio autoplay failed:", error);
+                // Reset icon if autoplay fails
+                playIcon.setAttribute('data-lucide', 'play-circle');
+                // Reinitialize Lucide icons to update the icon
+                lucide.createIcons();
+            });
+            
+            // Listen for audio end to reset the icon
+            audio.addEventListener('ended', function() {
+                playIcon.setAttribute('data-lucide', 'play-circle');
+                // Reinitialize Lucide icons to update the icon
+                lucide.createIcons();
+                audio.remove();
+            });
         }
 
         // Contact modal functions
@@ -2525,11 +2719,23 @@
 
         // Close modal when clicking outside
         window.onclick = function(event) {
-            const modal = document.getElementById('contactModal');
-            if (event.target === modal) {
+            const contactModal = document.getElementById('contactModal');
+            
+            if (event.target === contactModal) {
                 closeContactModal();
             }
         }
+
+        // Close modals with ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const contactModal = document.getElementById('contactModal');
+                
+                if (contactModal.style.display === 'block') {
+                    closeContactModal();
+                }
+            }
+        });
 
         // Handle form submission
         document.addEventListener('DOMContentLoaded', function() {
@@ -2637,6 +2843,6 @@
                 });
             });
         });
-    </script>
-</body>
-</html>
+      </script>
+  </body>
+  </html>
