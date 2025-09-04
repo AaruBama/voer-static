@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1937,8 +1937,8 @@
                 <!-- <a href="#about">About</a>
                 <a href="#demo">Demo</a> -->
                 <a href="#" onclick="openContactModal()">Contact</a>
-                <button class="theme-toggle" onclick="toggleTheme()" title="Switch to dark theme">
-                    <i data-lucide="sun"></i>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Switch to light theme">
+                    <i data-lucide="moon"></i>
                 </button>
                 <button class="cta-button" onclick="window.open('https://calendly.com/rayverma00/30min', '_blank')">Book a call</button>
             </div>
@@ -2502,14 +2502,14 @@
             const themeToggle = document.querySelector('.theme-toggle i');
             const themeButton = document.querySelector('.theme-toggle');
             
-            if (htmlElement.getAttribute('data-theme') === 'light') {
-                htmlElement.setAttribute('data-theme', 'dark');
-                themeToggle.setAttribute('data-lucide', 'moon');
-                themeButton.title = 'Switch to light theme';
-            } else {
+            if (htmlElement.getAttribute('data-theme') === 'dark') {
                 htmlElement.setAttribute('data-theme', 'light');
                 themeToggle.setAttribute('data-lucide', 'sun');
                 themeButton.title = 'Switch to dark theme';
+            } else {
+                htmlElement.setAttribute('data-theme', 'dark');
+                themeToggle.setAttribute('data-lucide', 'moon');
+                themeButton.title = 'Switch to light theme';
             }
             
             // Reinitialize Lucide icons to update the icon
